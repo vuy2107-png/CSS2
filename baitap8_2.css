@@ -1,0 +1,27 @@
+.custom-header{
+    background-color: #0078D4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.custom-search-input{
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.custom-search-input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-search-btn{
+    color: white;
+    border-color: white;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.custom-search-btn:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}

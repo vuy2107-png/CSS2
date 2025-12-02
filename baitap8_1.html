@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Bootstrap Gallery Zoom</title>
+
+    <style>
+        /* Mặc định: 4 ảnh / dòng */
+        .gallery-item {
+            width: 25%;
+        }
+
+        /* < 700px: 2 ảnh / dòng */
+        @media (max-width: 700px) {
+            .gallery-item {
+                width: 50%;
+            }
+        }
+
+        /* < 500px: 1 ảnh / dòng */
+        @media (max-width: 500px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+
+        .gallery-item img {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Simple Gallery with Zoom</h2>
+
+    <div class="d-flex flex-wrap">
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=1" onclick="openImg(this.src)" alt="">
+        </div>
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=2" onclick="openImg(this.src)" alt="">
+        </div>
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=3" onclick="openImg(this.src)" alt="">
+        </div>
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=4" onclick="openImg(this.src)" alt="">
+        </div>
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=5" onclick="openImg(this.src)" alt="">
+        </div>
+
+        <div class="gallery-item p-2">
+            <img src="https://picsum.photos/600?random=6" onclick="openImg(this.src)" alt="">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="imgModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark">
+            <img id="modalImage" class="w-100" style="border-radius: 5px;">
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Hàm mở modal và đặt ảnh vào
+    function openImg(src) {
+        document.getElementById("modalImage").src = src;
+        let modal = new bootstrap.Modal(document.getElementById('imgModal'));
+        modal.show();
+    }
+</script>
+
+</body>
+</html>

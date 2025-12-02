@@ -1,1 +1,1 @@
-console.log('Happy developing ✨')
+_console.log('Happy developing ✨')
